@@ -23,6 +23,7 @@ import safro.archon.recipe.ChannelingRecipe;
 import safro.archon.recipe.ScriptingRecipe;
 import safro.archon.registry.BlockRegistry;
 import safro.archon.registry.ItemRegistry;
+import safro.archon.registry.MiscRegistry;
 import safro.archon.registry.RecipeRegistry;
 import thelm.archonjei.recipe.category.ChannelingCategory;
 import thelm.archonjei.recipe.category.ScriptingCategory;
@@ -72,7 +73,7 @@ public class ArchonJEI implements IModPlugin {
 			return;
 		}
 
-		registration.addRecipeTransferHandler(ScriptureTableScreenHandler.class, SCRIPTING, 0, 4, 6, 36);
+		registration.addRecipeTransferHandler(ScriptureTableScreenHandler.class, MiscRegistry.SCRIPTURE_TABLE_SH, SCRIPTING, 0, 4, 6, 36);
 	}
 
 	@Override
@@ -97,6 +98,10 @@ public class ArchonJEI implements IModPlugin {
 	public boolean checkDisabled() {
 		if(FabricLoader.getInstance().isModLoaded("rei_plugin_compatibilities")) {
 			LOGGER.warn("ArchonJEI is disabled with REIPC as Archon has native REI support");
+			return true;
+		}
+		if(FabricLoader.getInstance().isModLoaded("emi")) {
+			LOGGER.warn("ArchonJEI is disabled with EMI as Archon has native EMI support");
 			return true;
 		}
 		return false;

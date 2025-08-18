@@ -8,7 +8,7 @@ import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
 import safro.archon.client.screen.ScriptureTableScreen;
 import safro.archon.recipe.ScriptingRecipe;
@@ -18,9 +18,10 @@ import thelm.jeidrawables.gui.render.ResourceDrawable;
 
 public class ScriptingCategory extends AbstractRecipeCategory<ScriptingRecipe> {
 
-	public static final Component TITLE = new TranslatableComponent("rei.archon.scripting");
+	public static final Component TITLE = Component.translatable("rei.archon.scripting");
 
-	public static final IDrawable SLOTS = new ResourceDrawable(ScriptureTableScreen.TEXTURE, 15, 16, 143, 59);
+	public static final ResourceLocation SLOTS_TEXTURE = new ResourceLocation("archon:textures/gui/scripture_table_transparent.png");
+	public static final IDrawable SLOTS = new ResourceDrawable(SLOTS_TEXTURE, 2, 3, 143, 59, 147, 65);
 	public static final IDrawable LAPIS_BAR = new ResourceDrawable(ScriptureTableScreen.TEXTURE, 176, 29, 18, 4);
 
 	public ScriptingCategory() {

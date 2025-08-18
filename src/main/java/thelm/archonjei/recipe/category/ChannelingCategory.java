@@ -8,14 +8,13 @@ import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import net.minecraft.client.gui.Font;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import safro.archon.recipe.ChannelingRecipe;
 import thelm.archonjei.ArchonJEI;
 import thelm.jeidrawables.JEIDrawables;
 
 public class ChannelingCategory extends AbstractRecipeCategory<ChannelingRecipe> {
 
-	public static final Component TITLE = new TranslatableComponent("rei.archon.channeling");
+	public static final Component TITLE = Component.translatable("rei.archon.channeling");
 
 	public ChannelingCategory() {
 		super(ArchonJEI.CHANNELING, TITLE);
@@ -41,7 +40,7 @@ public class ChannelingCategory extends AbstractRecipeCategory<ChannelingRecipe>
 	public void draw(ChannelingRecipe recipe, IRecipeSlotsView recipeSlotsView, PoseStack poseStack, double mouseX, double mouseY) {
 		JEIDrawables.RECIPE_ARROW.draw(poseStack, 24, 4);
 		Font font = font();
-		Component costComponent = new TranslatableComponent("text.archon.mana_cost", recipe.getManaCost());
+		Component costComponent = Component.translatable("text.archon.mana_cost", recipe.getManaCost());
 		font.draw(poseStack, costComponent, getWidth() / 2 - font.width(costComponent) / 2, getHeight() - font.lineHeight, 0x00AAAA);
 	}
 }

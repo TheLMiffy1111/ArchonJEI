@@ -6,7 +6,6 @@ import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import thelm.jeidrawables.gui.render.BlankDrawable;
 
 public abstract class AbstractRecipeCategory<R> implements IRecipeCategory<R> {
@@ -27,16 +26,6 @@ public abstract class AbstractRecipeCategory<R> implements IRecipeCategory<R> {
 	}
 
 	@Override
-	public ResourceLocation getUid() {
-		return recipeType.getUid();
-	}
-
-	@Override
-	public Class<? extends R> getRecipeClass() {
-		return recipeType.getRecipeClass();
-	}
-
-	@Override
 	public RecipeType<R> getRecipeType() {
 		return recipeType;
 	}
@@ -46,8 +35,10 @@ public abstract class AbstractRecipeCategory<R> implements IRecipeCategory<R> {
 		return background;
 	}
 
+	@Override
 	public abstract int getWidth();
 
+	@Override
 	public abstract int getHeight();
 
 	@Override
