@@ -1,0 +1,45 @@
+modLoader = "lowcodefml"
+loaderVersion = "[47,)"
+license = "MIT"
+issueTrackerURL = "https://github.com/TheLMiffy1111/ArchonJEI/issues"
+
+[properties]
+	"connector:placeholder" = true
+
+[[mods]]
+	modId = "archonjei"
+	version = "0@VERSION@"
+	displayName = "ArchonJEI"
+	description = "An addon to Archon that adds JEI support."
+	logoFile = "archonjei.logo.png"
+	authors = "TheLMiffy1111"
+
+[[dependencies.archonjei]]
+	modId = "minecraft"
+	versionRange = "[1.20,1.20.2)"
+	mandatory = true
+
+[[dependencies.archonjei]]
+	modId = "connectormod"
+	versionRange = "*"
+	mandatory = true
+
+[[dependencies.archonjei]]
+	modId = "connectorextras"
+	versionRange = "*"
+	mandatory = true
+
+[[dependencies.archonjei]]
+	modId = "jei"
+	versionRange = "*"
+	mandatory = true
+
+[[dependencies.archonjei]]
+	modId = "jeidrawables"
+	versionRange = "*"
+	mandatory = true
+
+[[dependencies.archonjei]]
+	modId = "archon"
+	versionRange = "*"
+	mandatory = true

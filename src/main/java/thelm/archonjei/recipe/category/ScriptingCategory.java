@@ -1,10 +1,8 @@
 package thelm.archonjei.recipe.category;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
-import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
+import mezz.jei.api.gui.widgets.IRecipeExtrasBuilder;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import net.minecraft.network.chat.Component;
@@ -45,12 +43,12 @@ public class ScriptingCategory extends AbstractRecipeCategory<ScriptingRecipe> {
 		builder.addSlot(RecipeIngredientRole.INPUT, 101, 42).addIngredients(recipe.getInputs().get(2));
 		builder.addSlot(RecipeIngredientRole.INPUT, 125, 1).addIngredients(Ingredient.of(TagRegistry.BOOKS));
 		builder.addSlot(RecipeIngredientRole.CATALYST, 2, 1).addIngredients(Ingredient.of(TagRegistry.LAPIS_LAZULIS));
-		builder.addSlot(RecipeIngredientRole.OUTPUT, 64, 1).addItemStack(recipe.getResultItem());
+		builder.addSlot(RecipeIngredientRole.OUTPUT, 64, 1).addItemStack(recipe.getResultItem(registryAccess()));
 	}
 
 	@Override
-	public void draw(ScriptingRecipe recipe, IRecipeSlotsView recipeSlotsView, PoseStack poseStack, double mouseX, double mouseY) {
-		SLOTS.draw(poseStack);
-		LAPIS_BAR.draw(poseStack, 1, 23);
+	public void createRecipeExtras(IRecipeExtrasBuilder builder, ScriptingRecipe recipe, IFocusGroup focuses) {
+		builder.addDrawable(SLOTS, 0, 0);
+		builder.addDrawable(LAPIS_BAR, 1, 23);
 	}
 }

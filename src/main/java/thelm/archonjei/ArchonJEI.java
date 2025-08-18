@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import mezz.jei.api.IModPlugin;
+import mezz.jei.api.constants.RecipeTypes;
 import mezz.jei.api.helpers.IJeiHelpers;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.registration.IGuiHandlerRegistration;
@@ -27,6 +28,7 @@ import safro.archon.registry.MiscRegistry;
 import safro.archon.registry.RecipeRegistry;
 import thelm.archonjei.recipe.category.ChannelingCategory;
 import thelm.archonjei.recipe.category.ScriptingCategory;
+import thelm.archonjei.recipe.replacer.SoulBindingRecipeMaker;
 
 public class ArchonJEI implements IModPlugin {
 
@@ -65,6 +67,8 @@ public class ArchonJEI implements IModPlugin {
 		RecipeManager recipeManager = Minecraft.getInstance().level.getRecipeManager();
 		registration.addRecipes(CHANNELING, recipeManager.getAllRecipesFor(RecipeRegistry.CHANNELING));
 		registration.addRecipes(SCRIPTING, recipeManager.getAllRecipesFor(RecipeRegistry.SCRIPTING));
+
+		registration.addRecipes(RecipeTypes.CRAFTING, SoulBindingRecipeMaker.createRecipes());
 	}
 
 	@Override
