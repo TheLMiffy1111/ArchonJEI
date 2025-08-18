@@ -95,14 +95,14 @@ repositories {
 	}
 }
 
-def mcVersion = "1.19.2"
+def mcVersion = "1.19.3"
 def modName = "ArchonJEI"
 def modId = "archonjei"
-def specVersion = "19.2"
+def specVersion = "19.3"
 def vendor = "thelm"
 
 group = "thelm.archonjei"
-version = "19.2.0"
+version = "19.3.0"
 
 archivesBaseName = modName
 
@@ -141,29 +141,29 @@ dependencies {
 	implementation "org.apache.logging.log4j:log4j-core:2.24.3"
 
 	// Minecraft
-	minecraft "com.mojang:minecraft:1.19.2"
+	minecraft "com.mojang:minecraft:1.19.3"
 	mappings loom.layered {
 		officialMojangMappings {
 			nameSyntheticMembers = false
 		}
-		parchment "org.parchmentmc.data:parchment-1.19.2:2022.11.27@zip"
+		parchment "org.parchmentmc.data:parchment-1.19.3:2023.06.25@zip"
 	}
 	modImplementation "net.fabricmc:fabric-loader:0.17.0"
-	modImplementation "net.fabricmc.fabric-api:fabric-api:0.77.0+1.19.2"
-	modImplementation "eu.pb4:placeholder-api:2.0.0-pre.1+1.19.2"
-	modImplementation "com.terraformersmc:modmenu:4.2.0-beta.2"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:0.76.1+1.19.3"
+	modImplementation "eu.pb4:placeholder-api:2.0.0-rc.1+1.19.3"
+	modImplementation "com.terraformersmc:modmenu:5.1.0"
 
 	// JEI
-	modImplementation("mezz.jei:jei-1.19.2-fabric:11.8.1.1034") {transitive = false}
-	include(modImplementation("thelm.jeidrawables:JEIDrawables-Fabric:19.2.4"))
+	modImplementation("mezz.jei:jei-1.19.3-fabric:12.4.0.22") {transitive = false}
+	include(modImplementation("thelm.jeidrawables:JEIDrawables-Fabric:19.3.4"))
 
 	// Archon
-	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-api:5.0.2"
+	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-api:5.1.0"
 	modImplementation "dev.draylar.omega-config:omega-config-base:1.3.0+1.19.2"
 	implementation "me.zeroeightsix:fiber:0.23.0-2"
-	modImplementation "vazkii.patchouli:Patchouli:1.19.2-77-FABRIC"
+	modImplementation "vazkii.patchouli:Patchouli:1.19.3-78-FABRIC"
 	modImplementation "curse.maven:fabric-disable-custom-worlds-advice-401978:3827588"
-	modImplementation "curse.maven:archon-575339:4465024"
+	modImplementation "curse.maven:archon-575339:4500140"
 }
 
 def replacements = [
