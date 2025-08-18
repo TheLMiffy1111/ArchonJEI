@@ -1,0 +1,35 @@
+{
+	"schemaVersion": 1,
+	"id": "archonjei",
+	"version": "0@VERSION@",
+	"name": "ArchonJEI",
+	"description": "An addon to Archon that adds JEI support.",
+	"authors": [
+		"TheLMiffy1111"
+	],
+	"contact": {
+		"homepage": "https://www.curseforge.com/minecraft/mc-mods/archonjei",
+		"sources": "https://github.com/TheLMiffy1111/ArchonJEI",
+		"issues": "https://github.com/TheLMiffy1111/ArchonJEI/issues"
+	},
+	"license": "MIT",
+	"icon": "archonjei.logo.png",
+	"environment": "client",
+	"entrypoints": {
+		"jei_mod_plugin": [
+			"thelm.archonjei.ArchonJEI"
+		]
+	},
+	"mixins": [
+		"archonjei.mixins.json"
+	],
+	"depends": {
+		"minecraft": ">=1.18.2- <1.19-",
+		"jei": "*",
+		"jeidrawables": "*",
+		"archon": "*"
+	},
+	"conflicts": {
+		"rei_plugin_compatibilities": "*"
+	}
+}
