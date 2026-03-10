@@ -13,6 +13,7 @@ issueTrackerURL = "https://github.com/TheLMiffy1111/ArchonJEI/issues"
 	description = "An addon to Archon that adds JEI support."
 	logoFile = "archonjei.logo.png"
 	authors = "TheLMiffy1111"
+	displayURL = "https://www.curseforge.com/minecraft/mc-mods/archonjei"
 
 [[dependencies.archonjei]]
 	modId = "minecraft"
