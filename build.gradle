@@ -152,7 +152,7 @@ dependencies {
 
 	// JEI
 	modImplementation("mezz.jei:jei-1.19.3-fabric:12.4.0.22") {transitive = false}
-	include(modImplementation("thelm.jeidrawables:JEIDrawables-Fabric:19.3.4"))
+	include(modImplementation("thelm.jeidrawables:JEIDrawables-Fabric:19.3.7"))
 
 	// Archon
 	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-api:5.1.0"
